@@ -1,4 +1,5 @@
 /* hardhat.config.js */
+require('dotenv').config()
 require("@nomiclabs/hardhat-waffle")
 
 module.exports = {
@@ -9,7 +10,7 @@ module.exports = {
     },
     meter: {
       url: "https://rpctest.meter.io",
-      accounts: [PRIVATE_KEY]
+      accounts: [process.env.PRIVATE_KEY]
     }
   },
   solidity: {
