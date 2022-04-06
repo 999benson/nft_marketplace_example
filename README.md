@@ -7,6 +7,10 @@ or
 ```shell
 yarn add
 ```
+# Complie contracts
+```shell
+npx hardhat compile
+```
 # Run
 
 ```shell
