@@ -6,7 +6,20 @@ import { useRouter } from 'next/router'
 import Web3Modal from 'web3modal'
 
 const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
+// const projectId = '27PUaMdrG3UsGW7JJh9vcd2xN0i';
+// const projectSecret = 'c734d6838c1ce4fa90fd17358b43f499';
+// const auth =
+//     'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64');
 
+// const client = ipfsHttpClient({
+//     host: 'ipfs.infura.io',
+//     port: 5001,
+//     protocol: 'https',
+//     path:'api/v0',
+//     headers: {
+//         authorization: auth,
+//     },
+// });
 import {
   marketplaceAddress
 } from '../config'
@@ -28,6 +41,7 @@ export default function CreateItem() {
         }
       )
       const url = `https://ipfs.infura.io/ipfs/${added.path}`
+      
       setFileUrl(url)
     } catch (error) {
       console.log('Error uploading file: ', error)
@@ -43,6 +57,7 @@ export default function CreateItem() {
     try {
       const added = await client.add(data)
       const url = `https://ipfs.infura.io/ipfs/${added.path}`
+      console.log(url)
       /* after file is uploaded to IPFS, return the URL to use it in the transaction */
       return url
     } catch (error) {
