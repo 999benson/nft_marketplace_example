@@ -8,10 +8,10 @@ module.exports = {
     hardhat: {
       chainId: 1337
     },
-    meter: {
-      url: "https://rpctest.meter.io",
-      accounts: [process.env.PRIVATE_KEY]
-    }
+    // meter: {
+    //   url: "https://rpctest.meter.io",
+    //   accounts: [process.env.PRIVATE_KEY]
+    // }
   },
   solidity: {
     version: "0.8.4",
